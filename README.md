@@ -13,8 +13,8 @@
 ### Explain somethings:
 
 + I created two controller : Admin and user
-- Admin: Manage Item and modify information page
-- User: Read, contact, comment
+-- Admin: Manage Item and modify information page
+-- User: Read, contact, comment
 + Source and detail source I commented in there
 + Have one packet handleException: 
 - I created it but I catch exception at Front-End: Somethings like: 
