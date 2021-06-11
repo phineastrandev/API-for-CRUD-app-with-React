@@ -1,4 +1,4 @@
-# Here is API for CRUD app react
+# Here is code API for CRUD app react
 + Database: using hibernate spring JPA
 + Spring security: login with one role
 + EmailSender
