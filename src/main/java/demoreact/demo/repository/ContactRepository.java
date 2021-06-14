@@ -27,4 +27,7 @@ public interface ContactRepository extends JpaRepository<ContactEntity, Integer>
 
 
     ContactEntity findContactEntityByIdAndIsContacted(int id, int isContacted);
+
+    ContactEntity findContactEntityByEmailAndIsContacted(String email, int isContacted);
+
 }

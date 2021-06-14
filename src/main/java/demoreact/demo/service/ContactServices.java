@@ -35,6 +35,10 @@ public class ContactServices {
 
     MessageCommon messageCommon;
 
+    @Autowired
+    SendMailService sendMailService;
+
+
     /**
      * @return
      */
@@ -66,9 +70,19 @@ public class ContactServices {
      * @return
      * @throws RecordNotFoundException
      */
-    public ContactEntity createContactThread(ContactEntity entity) throws RecordNotFoundException {
-        entity.setIsContacted(1);
-        return contactRepository.save(entity);
+    public String createContactThread(ContactEntity entity) throws RecordNotFoundException {
+        ContactEntity newContact = contactRepository.findContactEntityByEmailAndIsContacted(entity.getEmail(), 1);
+        if(newContact == null){
+            sendMailService.sendEmail(entity.getEmail(),
+                    "Thanks for your contact ! We will try contact with you early!",
+                    "Web Blog Tran Phi Anh"
+            );
+            entity.setIsContacted(1);
+            contactRepository.save(entity);
+            return "ok";
+        } else {
+            return "notok";
+        }
     }
 
     /**

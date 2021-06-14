@@ -62,19 +62,6 @@ public class ManageContactController {
         return new ResponseEntity<List<ContactEntity>>(list, new HttpHeaders(), HttpStatus.OK);
     }
 
-    /**
-     *
-     * @param contactEntity
-     * @return entity contact
-     */
-    @PostMapping("contactes")
-    public ContactEntity createBlog(@RequestBody ContactEntity contactEntity) {
-        sendMailService.sendEmail(contactEntity.getEmail()
-                ,messageCommon.messageEmailBody,
-                messageCommon.getMessageEmailTitle
-                );
-        return services.createContactThread(contactEntity);
-    }
 
 
     /**

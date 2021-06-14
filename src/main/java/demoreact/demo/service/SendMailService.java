@@ -32,6 +32,7 @@ public class SendMailService {
      * @param topics
      */
     public void sendEmail(String to, String body, String topics){
+
         System.out.println("Sending mail");
         SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
         simpleMailMessage.setFrom("conacmong5@gmail.com");
